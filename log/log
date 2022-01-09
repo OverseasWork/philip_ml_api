@@ -1,0 +1,23 @@
+2022-01-10 02:35:17,460 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:21] - INFO: start predict 1020210717125639000083595 ---------------------------------------
+2022-01-10 02:35:17,460 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:28] - ERROR: 未知错误:eval() arg 1 must be a string, bytes or code object
+2022-01-10 02:36:26,757 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:21] - INFO: start predict 1020210717125639000083595 ---------------------------------------
+2022-01-10 02:38:23,606 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:21] - INFO: start predict 1020210717125639000083595 ---------------------------------------
+2022-01-10 02:43:56,257 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:21] - INFO: start predict new cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 02:43:56,319 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:33] - INFO: end predict new cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 02:46:38,403 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:21] - INFO: start predict new cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 02:46:38,466 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:33] - INFO: end predict new cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 02:49:42,436 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:21] - INFO: start predict new cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 02:49:42,498 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:33] - INFO: end predict new cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 03:26:14,142 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/old_cust_ml/api.py[line:23] - INFO: start predict old cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 03:26:14,208 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/old_cust_ml/api.py[line:35] - INFO: end predict old cust order:1020210717125639000083595, out score: 705 ---------------------------
+2022-01-10 03:30:07,955 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/old_cust_ml/api.py[line:23] - INFO: start predict old cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 03:30:07,955 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/old_cust_ml/old_cust_model.py[line:41] - WARNING: app_list or add_list is empty, fill cl feat 0
+2022-01-10 03:30:07,968 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/old_cust_ml/api.py[line:35] - INFO: end predict old cust order:1020210717125639000083595, out score: 715 ---------------------------
+2022-01-10 03:30:20,437 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/old_cust_ml/api.py[line:23] - INFO: start predict old cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 03:30:20,500 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/old_cust_ml/api.py[line:35] - INFO: end predict old cust order:1020210717125639000083595, out score: 705 ---------------------------
+2022-01-10 03:50:28,241 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:21] - INFO: start predict new cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 03:50:28,303 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:33] - INFO: end predict new cust order:1020210717125639000083595, out score: 682 ---------------------------
+2022-01-10 03:50:37,867 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:21] - INFO: start predict new cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 03:50:37,923 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/new_cust_ml/api.py[line:33] - INFO: end predict new cust order:1020210717125639000083595, out score: 682 ---------------------------
+2022-01-10 03:50:49,857 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/old_cust_ml/api.py[line:23] - INFO: start predict old cust order:1020210717125639000083595 ---------------------------------------
+2022-01-10 03:50:49,913 - /Users/huangsir/Desktop/中子数科/thailand_ml_api/app/app/old_cust_ml/api.py[line:35] - INFO: end predict old cust order:1020210717125639000083595, out score: 705 ---------------------------

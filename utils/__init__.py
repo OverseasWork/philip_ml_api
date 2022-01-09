@@ -7,3 +7,4 @@
 
 from .load_utils import load_txt_feature
 from .ml_utils import prob2Score,scorecard_ply
+from .log_utils import Logger
