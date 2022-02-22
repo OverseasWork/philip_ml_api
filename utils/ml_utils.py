@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2020/10/29 5:08 下午
+# @Time    : 2022/02/21 5:08 下午
 # @Author  : HuangSir
 # @FileName: ml_utils.py
 # @Software: PyCharm
@@ -12,11 +12,12 @@ from pandas.api.types import is_string_dtype
 from pandas.api.types import is_numeric_dtype
 import warnings
 
-def prob2Score(prob,basePoint=550,PDO=100,odds=30):
+
+def prob2Score(prob, basePoint=550, PDO=30, odds=20):
     # 将概率转化成分数且为正整数
-    y = np.log(prob/(1-prob))
+    y = np.log(prob / (1 - prob))
     a = basePoint - y * np.log(odds)
-    y2 = a - PDO/np.log(2)*(y)
+    y2 = a - PDO / np.log(2) * (y)
     score = y2.astype('int')
     return score
 

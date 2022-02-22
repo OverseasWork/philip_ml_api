@@ -1,6 +1,6 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python:3.8
 
-EXPOSE 8005/tcp
+EXPOSE 9105/tcp
 
 WORKDIR /modelapi
 

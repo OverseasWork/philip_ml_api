@@ -7,6 +7,7 @@
 
 from .ml_router import ml_router
 
+
 def risk_router_init(app):
     app.include_router(
         ml_router

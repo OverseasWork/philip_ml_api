@@ -5,6 +5,7 @@
 # @Software: PyCharm
 # @Desc: 常用工具
 
-from .load_utils import load_txt_feature
-from .ml_utils import prob2Score,scorecard_ply
+from .load_utils import load_txt_feat
+from .ml_utils import prob2Score, scorecard_ply
 from .log_utils import Logger
+

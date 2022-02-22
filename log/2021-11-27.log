@@ -1,9 +1,0 @@
-2021-11-27 15:24:32,432 - INFO - Started server process [58185]
-2021-11-27 15:24:32,433 - INFO - Waiting for application startup.
-2021-11-27 15:24:32,433 - INFO - Application startup complete.
-2021-11-27 15:24:32,436 - INFO - Uvicorn running on http://0.0.0.0:8004 (Press CTRL+C to quit)
-2021-11-27 15:25:37,956 - WARNING - {'prob': 0.40862226599949036, 'msg': 'success', 'status_code': 100}
-2021-11-27 15:27:12,678 - INFO - Shutting down
-2021-11-27 15:27:12,781 - INFO - Waiting for application shutdown.
-2021-11-27 15:27:12,781 - INFO - Application shutdown complete.
-2021-11-27 15:27:12,781 - INFO - Finished server process [58185]

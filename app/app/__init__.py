@@ -3,4 +3,7 @@
 # @Author  : HuangSir
 # @FileName: __init__.py
 # @Software: PyCharm
-# @Desc: 
+# @Desc:
+
+from .api import risk_main
+from .risk_score import risk_score

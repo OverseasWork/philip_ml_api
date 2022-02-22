@@ -5,4 +5,6 @@
 # @Software: PyCharm
 # @Desc: 运行环境配置
 
-env = 'product' # product,develop
+# product,develop
+env = 'product'
+

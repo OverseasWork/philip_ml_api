@@ -1,8 +1,0 @@
-2022-01-10 00:26:10,339 - INFO - Started server process [35201]
-2022-01-10 00:26:10,340 - INFO - Waiting for application startup.
-2022-01-10 00:26:10,340 - INFO - Application startup complete.
-2022-01-10 00:26:10,344 - INFO - Uvicorn running on http://0.0.0.0:8004 (Press CTRL+C to quit)
-2022-01-10 00:27:40,145 - INFO - Shutting down
-2022-01-10 00:27:40,247 - INFO - Waiting for application shutdown.
-2022-01-10 00:27:40,248 - INFO - Application shutdown complete.
-2022-01-10 00:27:40,248 - INFO - Finished server process [35201]

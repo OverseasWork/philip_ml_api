@@ -8,8 +8,9 @@
 import sys
 sys.path.append('..')
 
-def load_txt_feature(path_file:str):
-    with open(path_file,'r') as f:
+
+def load_txt_feat(file: str):
+    with open(file, 'r', encoding='utf-8') as f:
         feature = f.read().split('\n')
         feature = [i for i in feature if i]
         return feature
