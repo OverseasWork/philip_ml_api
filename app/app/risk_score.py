@@ -42,7 +42,7 @@ def cal_res(df):
 
 
 def get_feature(data):
-    df = pd.DataFrame(data.loc[0, 'APPLIST'], index=[0])
+    df = pd.DataFrame(json.loads(data.loc[0, 'APPLIST']))
     df['apply_time'] = data.loc[0, 'order_time']
     df['apply_time'] = pd.to_datetime(df['apply_time'])
     df['lastTime'] = pd.to_datetime(df['lastTime'])
@@ -66,7 +66,7 @@ def get_feature(data):
     day_tag['all_self_comp_cnt'] = self_comp.shape[0]
     day_tag['all_cnt'] = df.shape[0]
     # add-------
-    add_df = pd.DataFrame(data.loc[0, 'ADDLIST'], index=[0])
+    add_df = pd.DataFrame(json.loads(data.loc[0, 'ADDLIST']))
     add_df['contain_chs'] = add_df['other_name'].str.extract(r'([\u4e00-\u9fa5]+)')
     lxr_num = add_df.shape[0]
     chs_lxr_num = add_df[~add_df.contain_chs.isnull()].shape[0]
@@ -144,6 +144,8 @@ def risk_score(data: dict):
     try:
         # 主函数
         log.logger.info(f'{busiId}: starting run --------------------------------')
+        data['ADDLIST'] = json.dumps(data['ADDLIST'])
+        data['APPLIST'] = json.dumps(data['APPLIST'])
         a = json.dumps(data)
         data = pd.DataFrame(json.loads(a), index=[0])
         # 处理标签
