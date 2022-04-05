@@ -144,6 +144,9 @@ def risk_score(data: dict):
     try:
         # 主函数
         log.logger.info(f'{busiId}: starting run --------------------------------')
+        # 提取 性别,年龄,婚姻
+        sex,age,marry = data['sex'],data['age'],data['marry']
+
         data['ADDLIST'] = json.dumps(data['ADDLIST'])
         data['APPLIST'] = json.dumps(data['APPLIST'])
         a = json.dumps(data)
@@ -170,7 +173,7 @@ def risk_score(data: dict):
                                'rom_y', 'res1', 'res2', 'res3', 'campaign_name', 'ram_pct', 'cpu_core']], data2,
                          on='BUSI_ID', how='right')
         result = None
-        # 老客
+        # 老客 --------------------------------
         if all(data3['is_new'] == 0):
             lgb_model = joblib.load(f"{path}old_cust_20220218.pkl")
             in_model_col = load_txt_feat(f"{path}old_cust_20220218.txt")
@@ -192,9 +195,16 @@ def risk_score(data: dict):
             model_data.fillna(0, inplace=True)
             lgb_prob = np.mean([i.predict(model_data) for i in lgb_model], axis=0)[0]
             score = prob2Score(lgb_prob)
-            result = {'prob': int(score), 'msg': 'success', 'status_code': 100, 'busiId': busiId, 'version': 'v1'}
+
+            if sex == 2 and score <= 550:
+                decision = '拒绝'
+            else:
+                decision = '通过'
+
+            result = {'prob': int(score), 'decision':decision,
+                      'msg': 'success', 'status_code': 100, 'busiId': busiId, 'version': 'v1'}
             log.logger.info(f'{busiId}:finish predict,score:{int(score)}, [old customer] --------------------------------')
-        # 新客白名单
+        # 新客白名单 --------------------------------
         elif all(data3['WHITE'] == 1) and all(data3['is_new'] == 1):
             lgb_model = joblib.load(f"{path}new_cust_white_20220219.pkl")
             in_model_col = load_txt_feat(f"{path}new_cust__white_20220219.txt")
@@ -219,10 +229,17 @@ def risk_score(data: dict):
             log.logger.info(model_data)
             lgb_prob = np.mean([i.predict(model_data) for i in lgb_model], axis=0)[0]
             score = prob2Score(lgb_prob)
-            result = {'prob': int(score), 'msg': 'success', 'status_code': 100, 'busiId': busiId, 'version': 'v1'}
+            # 决策 --------------------------------
+            if sex == 1 and score <= 550:
+                decision = '拒绝'
+            else:
+                decision = '通过'
+
+            result = {'prob': int(score),'decision':decision,
+                      'msg': 'success', 'status_code': 100, 'busiId': busiId, 'version': 'v1'}
             log.logger.info(f'{busiId}:finish predict,score:{int(score)}, '
                             f'[new customer and white]--------------------------------')
-        # 新客非白名单
+        # 新客非白名单 --------------------------------
         elif all(data3['WHITE'] == 0) and all(data3['is_new'] == 1):
             lgb_model = joblib.load(f"{path}new_cust_20220219.pkl")
             in_model_col = load_txt_feat(f"{path}new_cust_20220219.txt")
@@ -246,7 +263,16 @@ def risk_score(data: dict):
             model_data.fillna(0, inplace=True)
             lgb_prob = np.mean([i.predict(model_data) for i in lgb_model], axis=0)[0]
             score = prob2Score(lgb_prob)
-            result = {'prob': int(score), 'msg': 'success', 'status_code': 100, 'busiId': busiId, 'version': 'v1'}
+            # 决策 --------------------------------
+            if (score < 560 and age < 38 and sex == 1) or (
+                    score < 560 and age < 38 and sex == 2 and marry == 1) or (
+                    score < 560 and age >= 38 and sex == 1):
+                decision = '拒绝'
+            else:
+                decision = '通过'
+
+            result = {'prob': int(score),'decision':decision,
+                      'msg': 'success', 'status_code': 100, 'busiId': busiId, 'version': 'v1'}
             log.logger.info(f'{busiId}:finish predict,score:{int(score)}, '
                             f'[new customer and black]--------------------------------')
         return result
